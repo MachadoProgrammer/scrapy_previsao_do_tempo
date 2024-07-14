@@ -9,7 +9,7 @@ from itemadapter import ItemAdapter
 import openpyxl
 from dados_previsao_do_tempo.settings import XLSX_PATH
 
-CAMPOS = ['dia_atual', 'temperatura_maxima_e_minima', 'condicao_atual']
+CAMPOS = ['Dia', 'Temperatua máxima e mínima', 'Condição atual']
 class DadosXLSXPrevisaoDoTempoPipeline:
     planilha = None
     sheet = None
@@ -23,7 +23,7 @@ class DadosXLSXPrevisaoDoTempoPipeline:
 
     def process_item(self, item, spider):
         adpater = ItemAdapter(item)
-        self.sheet.append([adpater.get('dia_atual'), adpater.get('temperatura_maxima_e_minima'), adpater.get('condicao_atual')])
+        self.sheet.append([adpater.get('Dia'), adpater.get('Temperatua máxima e mínima'), adpater.get('Condição atual')])
         
         return item
     
